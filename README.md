@@ -14,7 +14,7 @@ Implemented rolling averages and peak detection using **PySpark**, stored data i
 - Packages: `pandas`, `pyspark`, `scipy`, `matplotlib`, `pymongo`
 
 ## Run
-1. Update MongoDB URI in code.  
+1. Update the URI with your own MongoDB Atlas credentials, replacing your_user and your_password. 
 2. Run:  
    ```bash
    python main.py
