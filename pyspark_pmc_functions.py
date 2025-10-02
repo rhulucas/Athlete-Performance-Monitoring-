@@ -10,7 +10,7 @@ plt.rcParams["figure.figsize"] = (20, 6)
 # MongoDB configuration
 db_name = "performance"
 collection = "player_data_temporary_timeseries_collection"
-db_URI = f"mongodb+srv://your_user:your_password@cluster0.wqrsi.mongodb.net/{db_name}.{collection}"
+db_URI = f"mongodb+srv://<USERNAME>:<PASSWORD>@cluster0.wqrsi.mongodb.net/<DB_NAME>.<COLLECTION>"
 
 # Initialize Spark session
 my_spark = SparkSession \
@@ -114,4 +114,5 @@ if __name__ == '__main__':
         plt.show()
     else:
         print("Error: Missing required columns in peak detection data or data is empty.")
+
 
