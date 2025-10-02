@@ -5,7 +5,7 @@ from pyspark.sql.functions import year, month, dayofmonth, asc, to_date
 
 db_name = "performance"
 collection = "player_data_temporary_timeseries_collection"
-db_URI = f"mongodb+srv://mongo-user:qBLyWGnw09CNwHFe@cluster0.wqrsi.mongodb.net/{db_name}.{collection}"
+db_URI = f"mongodb+srv://your_user:your_password@cluster0.wqrsi.mongodb.net/{db_name}.{collection}"
 
 # Set session with mongo-spark connector and URIs for db
 my_spark = SparkSession \
@@ -64,4 +64,5 @@ df.groupby(to_date(df.timestamp), df.metadata.athleteId).count().show()
 
 
 print('Session count per athlete: ')
+
 df.select(df.metadata.athleteId.alias('athlete'), to_date(df.timestamp)).distinct().groupby('athlete').count().show()
